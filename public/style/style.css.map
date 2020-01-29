@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,EAAE,CAAC;EACA,KAAK,EAAE,IAAI;CACb;;ADAD,AAAA,EAAE,CAAC;EACA,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,UAAU;CAIxB;;AAND,AAGG,EAHD,AAGE,MAAM,CAAC;EACL,KAAK,EAAE,KAAK;CACd",
+    "sources": [
+        "style.scss",
+        "_leaderboard.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

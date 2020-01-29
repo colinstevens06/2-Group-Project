@@ -1,0 +1,14 @@
+h2 {
+  color: blue;
+}
+
+h1 {
+  color: red;
+  -webkit-box-shadow: 1px salmon;
+          box-shadow: 1px salmon;
+}
+
+h1:hover {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */
