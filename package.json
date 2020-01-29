@@ -1,4 +1,13 @@
 {
+<<<<<<< HEAD
+  "name": "2-Group-Project",
+  "version": "1.0.0",
+  "description": "Group Project - TBD",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+=======
   "name": "placeholder",
   "version": "0.1.0",
   "description": "Group Project - TBD",
@@ -8,17 +17,31 @@
     "lint": "eslint ./src/ ./spec/",
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"
+>>>>>>> b325c2709e3b6f767f772bb353ab79e455835351
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colinstevens06/2-Group-Project.git"
   },
+<<<<<<< HEAD
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+=======
   "author": "",
   "license": "GPL-3.0",
+>>>>>>> b325c2709e3b6f767f772bb353ab79e455835351
   "bugs": {
     "url": "https://github.com/colinstevens06/2-Group-Project/issues"
   },
   "homepage": "https://github.com/colinstevens06/2-Group-Project#readme",
+<<<<<<< HEAD
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "express": "^4.17.1"
+  }
+}
+=======
   "devDependencies": {
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
@@ -30,3 +53,4 @@
     "subtroller": "^0.1.5"
   }
 }
+>>>>>>> b325c2709e3b6f767f772bb353ab79e455835351
