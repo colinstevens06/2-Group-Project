@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest ./spec/",
-    "lint": "eslint",
+    "lint": "eslint ./src/ ./spec/",
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"
   },
