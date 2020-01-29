@@ -1,0 +1,32 @@
+{
+  "name": "placeholder",
+  "version": "0.1.0",
+  "description": "Group Project - TBD",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest ./spec/",
+    "lint": "eslint",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinstevens06/2-Group-Project.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/colinstevens06/2-Group-Project/issues"
+  },
+  "homepage": "https://github.com/colinstevens06/2-Group-Project#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "packetier": "^1.0.1",
+    "subtroller": "^0.1.5"
+  }
+}
