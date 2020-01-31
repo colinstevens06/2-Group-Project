@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Nottomon API
+  description: Nottomon API
+  version: 0.1.0
+
+servers:
+  - url: https://nottomon.herku.com
+
+components:
+  securitySchemes:
+    authToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      properties:
+        uid:
+          type: string
+        username:
+          type: string
+        teams:
+          type: array
+          items:
+            $ref: "#/components/schemas/Team"
+    Team:
+      type: object
+      properties:
+        mons:
+          type: array
+          items:
+            $ref: "#/components/schemas/Mon"
+        wins:
+          type: integer
+        losses:
+          type: integer
+    Mon:
+      type: object
+      properties:
+        name:
+          type: string
+        level:
+          type: integer
+        nickname:
+          type: string
+        moves:
+          type: array
+          items:
+            type: string
+    packet:
+      type: object
+      properties:
+        success:
+          type: boolean
+        payload:
+          type: object
+        meta:
+          type: object
+
+paths:
+  /api/user/:id:
+    get:
+      description: Gets a user's information
+      responses:
+        200:
+          description: User info
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    put:
+      description: Update user information
+      responses:
+        "200":
+          description: User updated
+        401:
+          description: Bad auth token
+
+  /api/leaderboard:
+    get:
+      description: Get the global leaderboard
+      responses:
+        default:
+          description: Returns the leaderboard
