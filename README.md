@@ -1,2 +1,9 @@
 # 2-Group-Project
-Group Project - TBD
+
+## Dependencies
+
+- Express
+- Sequalize
+- Packetier
+- Subtroller
+- eslint
