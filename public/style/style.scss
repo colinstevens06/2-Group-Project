@@ -1,10 +1,17 @@
 @import "./leaderboard";
+@import "./battlefield";
 
-h1 {
-   color: red;
-   box-shadow: 1px salmon;
-   &:hover {
-      color: green;
-   }
+$backgroundColor: #7e2a1f;
+$primaryColor: #eeff00;
+
+html, body {
+   background-color: $backgroundColor;
 }
+
+.container {
+   margin-top: 3.5rem;
+   max-width: 960px;
+   background-color: white;
+};
+
 
