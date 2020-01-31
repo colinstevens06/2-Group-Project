@@ -78,6 +78,23 @@ paths:
         401:
           description: Bad auth token
 
+  /api/user/:id/teams:
+    get:
+      description: Get a user's teams
+      responses:
+        200:
+          description: The user's teams
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Team"
+
+
   /api/leaderboard:
     get:
       description: Get the global leaderboard
