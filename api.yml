@@ -28,6 +28,8 @@ components:
     Team:
       type: object
       properties:
+        name:
+          type: string
         mons:
           type: array
           items:
@@ -73,7 +75,7 @@ paths:
     put:
       description: Update user information
       responses:
-        "200":
+        200:
           description: User updated
         401:
           description: Bad auth token
@@ -93,7 +95,18 @@ paths:
                     type: array
                     items:
                       $ref: "#/components/schemas/Team"
+    post:
+      description: Creates a new team
+      responses:
+        201:
+          description: New team has been created
 
+  /api/user/:id/teams/:id:
+    put:
+      description: Update a team
+      responses:
+        200:
+          description: Team has been updated
 
   /api/leaderboard:
     get:
