@@ -7,7 +7,9 @@
     "test": "jest ./spec/",
     "lint": "eslint ./src/ ./spec/",
     "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "clean": "rm -rf ./node_modules package-lock.json",
+    "reinstall": "npm run clean && npm install"
   },
   "repository": {
     "type": "git",
@@ -35,7 +37,6 @@
     "packetier": "^1.0.1",
     "sequelize": "^5.21.3",
     "subtroller": "^0.1.5",
-    "swagger-jsdoc": "^3.5.0",
     "swagger-ui-express": "^4.1.3"
   }
 }
