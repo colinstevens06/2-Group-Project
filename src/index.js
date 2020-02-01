@@ -1,13 +1,19 @@
 // Initialize env
 require("dotenv").config();
-const { createServer } = require("./server");
+// Import Externals
+// Import Internals
+const { initGameServer, initExpressServer } = require("./server");
 
 const main = async () => {
-  const server = await createServer();
+  // Create the express instance
+  const expressServer = await initExpressServer();
 
-  server.listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}`);
-  });
+  // Create the game server
+  const gameServer = await initGameServer(expressServer);
+
+  // Listen
+  const port = process.env.PORT;
+  gameServer.listen(port, () => console.log(`Listening on port ${port}`));
 };
 
 main();

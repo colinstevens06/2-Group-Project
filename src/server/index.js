@@ -4,7 +4,7 @@ const cors = require("cors");
 /**
  * Creates a new Express server.
  */
-const createServer = () => {
+const initExpressServer = async () => {
   const svr = express();
 
   // Configuration
@@ -19,5 +19,6 @@ const createServer = () => {
 };
 
 module.exports = {
-  createServer
+  initExpressServer,
+  initGameServer: require("./GameServer")
 };
