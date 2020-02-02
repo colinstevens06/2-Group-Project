@@ -1,0 +1,54 @@
+.battlefield-header__h1 {
+   font-size: 2.5rem;
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+};
+
+.battlefield-header__action {
+   font-size: 1.5rem;
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+
+};
+
+.pokemon-image {
+   width: 70%;
+};
+
+.health-box {
+   background-color: #007f00;
+   height: 15px;
+   width: 200px;
+   border: solid 1px #aaa;
+   margin-top: 5px;
+   margin-top: 15px;
+};
+
+.button-attack {
+   background-color: $backgroundColor;
+   color: $primaryColor;
+   transition: .5s;
+   width: 100%;
+   &:hover {
+      background-color: $primaryColor;
+      color: $backgroundColor;
+      transition: .5s;
+   }
+};
+
+.gameplay-text-box {
+   margin-bottom: 25px;
+};
+
+.attack-options {
+   text-align: center;
+   .column {
+   padding: .25rem;
+   };
+};
+
+
