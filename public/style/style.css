@@ -1,4 +1,4 @@
-.battlefield-header {
+.battlefield-header__h1 {
   font-size: 2.5rem;
   width: 300px;
   margin-left: auto;
@@ -6,8 +6,16 @@
   text-align: center;
 }
 
+.battlefield-header__action {
+  font-size: 1.5rem;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .pokemon-image {
-  width: 150%;
+  width: 70%;
 }
 
 .health-box {
@@ -17,6 +25,33 @@
   border: solid 1px #aaa;
   margin-top: 5px;
   margin-top: 15px;
+}
+
+.button-attack {
+  background-color: #7e2a1f;
+  color: #eeff00;
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 100%;
+}
+
+.button-attack:hover {
+  background-color: #eeff00;
+  color: #7e2a1f;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.gameplay-text-box {
+  margin-bottom: 25px;
+}
+
+.attack-options {
+  text-align: center;
+}
+
+.attack-options .column {
+  padding: .25rem;
 }
 
 html, body {

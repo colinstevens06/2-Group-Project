@@ -1,8 +1,8 @@
-@import "./leaderboard";
-@import "./battlefield";
-
 $backgroundColor: #7e2a1f;
 $primaryColor: #eeff00;
+
+@import "./leaderboard";
+@import "./battlefield";
 
 html, body {
    background-color: $backgroundColor;
