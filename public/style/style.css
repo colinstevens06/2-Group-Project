@@ -7,25 +7,66 @@
 }
 
 .pokemon-image {
-  width: 150%;
+width: 150%;
 }
 
 .health-box {
-  background-color: #007f00;
-  height: 15px;
-  width: 200px;
-  border: solid 1px #aaa;
-  margin-top: 5px;
-  margin-top: 15px;
+background-color: #007f00;
+height: 15px;
+width: 200px;
+border: solid 1px #aaa;
+margin-top: 5px;
+margin-top: 15px;
 }
 
 html, body {
   background-color: #7e2a1f;
-}
+  }
 
 .container {
   margin-top: 3.5rem;
   max-width: 960px;
   background-color: white;
+  border-radius: 25px;
+  padding-bottom: 1.5rem;
+  }
+
+.profile-header {
+  font-size: 4rem;
+  background: linear-gradient(to left, rgb(112,101,214), rgb(230,106,213));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+  }
+
+#homePage {
+  font-size: 5rem;
 }
-/*# sourceMappingURL=style.css.map */
+
+.profile-border {
+  border: 1px solid rgb(57, 57, 209);
+}
+
+.profile-text {
+  text-indent: 10px;
+}
+
+.pageGif {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.small-form {
+  width: 30rem;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.buttons {
+  justify-content: center;
+}
+
+img {
+  border-radius: 25px;
+}
