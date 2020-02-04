@@ -15,4 +15,8 @@ router.get("/", function(req, res) {
   res.render("partials/index");
 });
 
+router.get("/profile", function(req, res) {
+  res.render("partials/profile", objHbrsData);
+});
+
 module.exports = router;
