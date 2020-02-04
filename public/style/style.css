@@ -54,6 +54,26 @@
   padding: .25rem;
 }
 
+.team-selection-header__h1 {
+  font-size: 2.5rem;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.selection-container {
+  padding: 24px 46px;
+}
+
+.team-select-text {
+  margin-bottom: 25px;
+}
+
+.button-drop {
+  margin-bottom: 15px;
+}
+
 html, body {
   background-color: #7e2a1f;
 }
