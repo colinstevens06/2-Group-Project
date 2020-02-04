@@ -1,15 +1,10 @@
 const test = async () => {
   const p1 = await findGame();
-  const p2 = await findGame();
-  let p3;
+  //const p2 = await findGame();
 
-  setTimeout(() => p2.leave(), 5000);
-  setTimeout(async () => (p3 = await findGame()), 9000);
+  const result = await fetch("http://localhost:7000/api/match");
 
-  setTimeout(
-    () => p3.send({ type: "action", payload: { action: "attack" } }),
-    11000
-  );
+  console.log(await result.json());
 };
 
 test();
