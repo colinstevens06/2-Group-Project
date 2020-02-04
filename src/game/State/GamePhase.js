@@ -1,7 +1,9 @@
 const GamePhase = {
-  SETUP: "setup",
+  WAITING: "waiting",
+  READY: "ready",
   PLAYING: "playing",
-  ENDED: "ended"
+  END: "end",
+  CANCEL: "cancel"
 };
 
 module.exports = GamePhase;
