@@ -74,6 +74,11 @@
   margin-bottom: 15px;
 }
 
+.dropdown-item:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
 html, body {
   background-color: #7e2a1f;
 }

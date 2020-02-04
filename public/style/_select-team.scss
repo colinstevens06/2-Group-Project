@@ -17,3 +17,10 @@
 .button-drop {
   margin-bottom: 15px;
 }
+
+.dropdown-item {
+  &:hover{
+    cursor: pointer;
+    background-color: #e6e6e6;
+  }
+}
