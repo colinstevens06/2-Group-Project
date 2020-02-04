@@ -3,7 +3,6 @@ info:
   title: Nottomon API
   description: Nottomon API
   version: 0.1.0
-
 servers:
   - url: https://nottomon.herku.com
 
@@ -28,6 +27,8 @@ components:
     Team:
       type: object
       properties:
+        uid:
+          type: string
         name:
           type: string
         mons:
@@ -41,6 +42,8 @@ components:
     Mon:
       type: object
       properties:
+        tid:
+          type: string
         name:
           type: string
         level:
@@ -101,7 +104,7 @@ paths:
         201:
           description: New team has been created
 
-  /api/user/:id/teams/:id:
+  /api/user/:id/team:
     put:
       description: Update a team
       responses:

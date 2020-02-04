@@ -1,3 +1,4 @@
 module.exports = {
-  Battlefield: require("./Battlefield")
+  Battlefield: require("./Battlefield"),
+  WarMap: require("./WarMap")
 };
