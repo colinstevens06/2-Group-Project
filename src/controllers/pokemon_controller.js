@@ -15,8 +15,7 @@ router.post("/api/new", function(req, res) {
       res.redirect("/api/all")
 // res.render("index")
   })
-
-
+  
   }
 
   )
