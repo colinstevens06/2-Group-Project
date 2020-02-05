@@ -66,40 +66,53 @@
 
 <body>
 
-  <div class="container">
-    <div class="has-text-centered">
-      <h1 class="profile-header has-text-weight-bold">Pokemon Battlefield Profile</h1>
-    </div>
-    <div class="column">
-      <div class="field">
-        <figure class="image is-128x128">
-          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
-        </figure>
-        <label class="label is-size-3">Name</label>
-        <label class="label profile-border profile-text is-size-5">USER NAME PLACEHOLDER</label>
-        <label class="label is-size-3">Email Address</label>
-        <label class="label profile-border profile-text is-size-5">EMAIL PLACEHOLDER</label>
-        <label class="label is-size-3">First Name</label>
-        <label class="label profile-border profile-text is-size-5">FIRST NAME PLACEHOLDER</label>
-        <label class="label is-size-3">Last Name</label>
-        <label class="label profile-border profile-text is-size-5">LAST NAME PLACEHOLDER</label>
-        <label class="label is-size-3">Game Wins</label>
-        <label class="label profile-border profile-text is-size-5">GAME WINS</label>
-      </div>
-    </div>
-  </div>
-
   <section>
     <div class="container is-desktop">
       <div class="columns is-centered">
         <div class="column">
-          <h1 class="team-selection-header__h1">Choose Your Team</h1>
           <div class="selection-container">
-            <p class="team-select-text">From here, you'll select a team of six PokeMon to go to battle with. Attacks
-              will be chosen at
-              random.
-              Choose wisely.</p>
+            <h1 class="profile-header has-text-weight-bold">Pokemon Battlefield Profile</h1>
+            <figure class="image is-128x128 is-centered">
+              <img class="is-centered" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
+            </figure>
+
             <form action="">
+              <!-- row for first name, last name and team name -->
+              <div class="columns">
+                <div class="column">
+                  <input class="input" type="text" placeholder="First Name" id="first-name">
+                </div>
+                <div class="column">
+                  <input class="input" type="text" placeholder="Last Name" id="last-name">
+                </div>
+                <div class="column">
+                  <input class="input" type="text" placeholder="Team Name" id="team-name">
+                </div>
+              </div>
+              <!-- row for email and password -->
+              <div class="columns">
+                <div class="column">
+                  <input class="input" type="email" placeholder="Email" id="user-email">
+                </div>
+                <div class="column">
+                  <input class="input" type="password" placeholder="Password" id="user-password">
+                </div>
+              </div>
+
+              <!-- text area to say pick your PokeMon -->
+              <div class="columns">
+                <div class="column">
+                  <h2 class="team-selection-header__h1">Choose Your Team</h2>
+
+                  <p class="team-select-text">From here, you'll select a team of six PokeMon to go to battle with.
+                    Attacks
+                    will be chosen at
+                    random.
+                    Choose wisely.</p>
+                </div>
+              </div>
+
+
               <!-- TOP ROW TO CHOOSE POKEMON -->
               <div class="columns">
 
@@ -202,6 +215,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- AJAX -->
 
 <!-- <script src="./select-team.js"></script> -->
-<script src="../js/create-team.js"></script>
+<script src="../js/create-profile.js"></script>
 
 </html>

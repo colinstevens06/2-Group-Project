@@ -2,13 +2,20 @@ $(document).ready(function () {
   // query URL for the AJAX call
   let queryURL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151";
 
+  // selectors for different input fields
+  const userFirstNameInput = $("#first-name");
+  const userLastNameInput = $("#last-name");
+  const userTeamNameInput = $("#team-name");
+  const userEmailInput = $("#user-email");
+  const userPasswordInput = $("#user-password");
+
   // selectors for our different dropdowns
-  let pokeSelect1 = $("#poke-select-1");
-  let pokeSelect2 = $("#poke-select-2");
-  let pokeSelect3 = $("#poke-select-3");
-  let pokeSelect4 = $("#poke-select-4");
-  let pokeSelect5 = $("#poke-select-5");
-  let pokeSelect6 = $("#poke-select-6");
+  const pokeSelect1 = $("#poke-select-1");
+  const pokeSelect2 = $("#poke-select-2");
+  const pokeSelect3 = $("#poke-select-3");
+  const pokeSelect4 = $("#poke-select-4");
+  const pokeSelect5 = $("#poke-select-5");
+  const pokeSelect6 = $("#poke-select-6");
 
   // AJAX call to the Poke API to get all the pokemon names and populate the dropdown items
   $.ajax({
@@ -50,7 +57,12 @@ $(document).ready(function () {
   $("#choose-team-submit").on("click", function (event) {
     event.preventDefault();
 
-    const newTeam = {
+    const newUser = {
+      userFirstName: userFirstNameInput.val().trim(),
+      userLastName: userLastNameInput.val().trim(),
+      userTeamName: userTeamNameInput.val().trim(),
+      userEmail: userEmailInput.val().trim(),
+      userPassword: userPasswordInput.val().trim(),
       pokemon1: pokeSelect1.val().trim(),
       pokemon2: pokeSelect2.val().trim(),
       pokemon3: pokeSelect3.val().trim(),
@@ -60,11 +72,11 @@ $(document).ready(function () {
 
     };
 
-    console.log(newTeam);
+    console.log(newUser);
 
     // $.ajax("/api/team", {
     //   type: "POST",
-    //   data: newTeam
+    //   data: newUser
     // }).then(function () {
     //   console.log("create new team");
     //   location.reload();
