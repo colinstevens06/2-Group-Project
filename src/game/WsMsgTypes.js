@@ -6,6 +6,7 @@
  */
 const WsMsgType = {
   SETTINGS: "settings",
+  READY: "ready",
   JOIN: "join",
   LEAVE: "leave",
   START: "start",

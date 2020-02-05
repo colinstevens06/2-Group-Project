@@ -7,6 +7,7 @@ class GameState {
     this.challenger = null;
     this.phase = GamePhase.WAITING;
     this.turn = 0;
+    this.countdown = -1;
   }
 
   /**

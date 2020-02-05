@@ -4,6 +4,7 @@ const WsSchemas = require("./WsSchema");
 const WsMsgType = require("./WsMsgTypes");
 const WarMap = require("./WarMap");
 const { socketier } = require("packetier");
+const { delay } = require("../util");
 
 /**
  * Battlefield Room.
@@ -19,8 +20,34 @@ class Battlefield extends Room {
     this.lobbyName = "BF-" + this.roomId;
   }
 
-  get open() {
+  /**
+   * @returns {boolean} `true` if the room has space for one more player.
+   */
+  get isOpen() {
     return this.clients.length !== this.maxClients;
+  }
+
+  /**
+   * Starts the countdown and starts game logic.
+   */
+  async start() {
+    console.log("Starting");
+    this.state.phase = GamePhase.STARTING;
+
+    // Countdown
+    for (
+      this.state.countdown = 5;
+      this.state.countdown > 0;
+      this.state.countdown -= 1
+    ) {
+      console.log(this.state.countdown);
+      await delay(1000);
+    }
+
+    // Start
+    this.state.phase = GamePhase.PLAYING;
+
+    // Now we await player 1's move
   }
 
   /**
@@ -28,7 +55,7 @@ class Battlefield extends Room {
    *
    * Expects `options` to match `options.create`
    *
-   * @param {{size: number}} options - Lobby Options
+   * @param {*} options - Lobby Options
    */
   onCreate(options) {
     WarMap.set(this.roomId, this);
@@ -36,12 +63,18 @@ class Battlefield extends Room {
     console.log("Created room", this.roomId);
   }
 
-  // Authorize client based on provided options before WebSocket handshake is complete
+  // TODO Authorize client based on provided options before WebSocket handshake is complete
   onAuth(client, options, request) {
     return true;
   }
 
-  // When client successfully join the room
+  /**
+   * Handles client joining the room.
+   *
+   * @param {*} client
+   * @param {*} options
+   * @param {*} auth
+   */
   onJoin(client, options, auth) {
     if (!this.state.host) {
       this.state.setHost(client.id, options.username); // TODO Change to JWT
@@ -52,19 +85,8 @@ class Battlefield extends Room {
 
     console.log(`Player ${client.id} joined ${this.roomName} ${this.roomId}`);
 
-    this.broadcast(
-      socketier(
-        WsMsgType.JOIN,
-        { username: options.username },
-        { time: Date.now() }
-      )
-    );
-
-    this.broadcast(
-      socketier(WsMsgType.SETTINGS, { lobbyName: this.lobbyName })
-    );
-
-    if (this.clients.length === this.maxClients) {
+    // Set lobby to ready if 2 players are here
+    if (!this.isOpen) {
       this.state.phase = GamePhase.READY;
     }
   }
@@ -81,6 +103,9 @@ class Battlefield extends Room {
     }
 
     // Validate message type
+    /**
+     * @type {{value: {type: string, payload}}}
+     */
     const { value } = WsSchemas.MessageSchema.validate(message);
 
     if (!value) {
@@ -92,6 +117,18 @@ class Battlefield extends Room {
 
     // Handle cases
     switch (value.type) {
+      // Handle ready-up/un-ready
+      case WsMsgType.READY:
+        player.ready = value.payload.ready;
+        if (
+          this.state.host.ready &&
+          this.state.challenger &&
+          this.state.challenger.ready
+        ) {
+          this.start();
+        }
+        break;
+      // Handle ACTIONS: Moves & Swaps
       case WsMsgType.ACTION:
         this.broadcast(
           socketier(WsMsgType.ACTION, {
@@ -101,7 +138,7 @@ class Battlefield extends Room {
         );
         break;
       default:
-        console.log("Unknown");
+        console.log(`Unknown Message Type: ${value}`);
     }
   }
 
