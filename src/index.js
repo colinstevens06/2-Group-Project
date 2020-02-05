@@ -25,6 +25,20 @@ var routes = require("./controllers/index.js");
 app.use(routes);
 
 //Open the port and listen for requests
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("Server listening on: http://localhost:" + PORT);
 });
+
+// Initialize env
+require("dotenv").config();
+const { createServer } = require("./server");
+
+const main = async () => {
+  const server = await createServer();
+
+  server.listen(process.env.PORT, () => {
+    console.log(`Listening on port ${process.env.PORT}`);
+  });
+};
+
+main();
