@@ -20,6 +20,7 @@ class Battlefield {
 
     room.onStateChange(async state => {
       console.log("State", state);
+      this.state = state;
     });
 
     room.onLeave(code => {
@@ -52,6 +53,14 @@ class Battlefield {
     this.enroomed(() => {
       this.room.send(
         socketier("ready", { ready: typeof set === "boolean" ? set : true })
+      );
+    });
+  }
+
+  async attack(move) {
+    this.enroomed(() => {
+      this.room.send(
+        socketier("action", { action: "attack", attack: Math.random() })
       );
     });
   }

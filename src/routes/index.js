@@ -1,3 +1,4 @@
 module.exports = {
-  matching: require("./matching")
+  matching: require("./matching"),
+  views: require("./views")
 };

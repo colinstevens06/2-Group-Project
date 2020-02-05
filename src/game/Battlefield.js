@@ -3,6 +3,7 @@ const { GameState, GamePhase } = require("./State");
 const WsSchemas = require("./WsSchema");
 const WsMsgType = require("./WsMsgTypes");
 const WarMap = require("./WarMap");
+const action = require("./Action");
 const { socketier } = require("packetier");
 const { delay } = require("../util");
 
@@ -31,7 +32,6 @@ class Battlefield extends Room {
    * Starts the countdown and starts game logic.
    */
   async start() {
-    console.log("Starting");
     this.state.phase = GamePhase.STARTING;
 
     // Countdown
@@ -40,7 +40,6 @@ class Battlefield extends Room {
       this.state.countdown > 0;
       this.state.countdown -= 1
     ) {
-      console.log(this.state.countdown);
       await delay(1000);
     }
 
@@ -115,7 +114,7 @@ class Battlefield extends Room {
       );
     }
 
-    // Handle cases
+    // Handle phase-independent messages
     switch (value.type) {
       // Handle ready-up/un-ready
       case WsMsgType.READY:
@@ -130,12 +129,25 @@ class Battlefield extends Room {
         break;
       // Handle ACTIONS: Moves & Swaps
       case WsMsgType.ACTION:
-        this.broadcast(
-          socketier(WsMsgType.ACTION, {
-            user: player.cid,
-            action: value.payload.action
-          })
-        );
+        if (this.state.phase !== GamePhase.PLAYING) {
+          this.send(
+            client,
+            socketier(WsMsgType.ERR, { msg: "Game has not started" })
+          );
+        } else {
+          const act = action.from(value.payload.action);
+          if (act) {
+            act.handle(this, value.payload);
+          } else {
+            this.send(
+              client,
+              socketier(WsMsgType.ERR, {
+                msg: "Invalid action",
+                type: "action"
+              })
+            );
+          }
+        }
         break;
       default:
         console.log(`Unknown Message Type: ${value}`);
