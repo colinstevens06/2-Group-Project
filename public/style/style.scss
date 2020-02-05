@@ -3,6 +3,7 @@ $primaryColor: #eeff00;
 
 @import "./leaderboard";
 @import "./battlefield";
+@import "./select-team";
 
 html, body {
    background-color: $backgroundColor;
