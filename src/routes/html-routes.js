@@ -1,6 +1,6 @@
 var path = require("path")
 
-// where we use middleware files. Possibly my isAuthenitcated file.
+// where we use middleware files. Possibly my isAuthenticated file.
 // or whichever Jono thinks would be best. This file uses isAuthenticated
 
 var isAuthenticated = require("../middleware/isAuthenticated")
