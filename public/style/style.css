@@ -88,10 +88,23 @@ html, body {
   background-color: #e6e6e6;
 }
 
+
 .buttons {
   justify-content: center;
 }
 
+.teamButton {
+  align-items: center;
+}
+
 img {
   border-radius: 25px;
+}
+
+#pokeImage {
+  align-items: center;
+}
+
+.pokeSelect {
+  margin-left: 5rem;
 }

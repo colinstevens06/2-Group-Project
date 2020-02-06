@@ -1,6 +1,6 @@
 const express = require("express");
-
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
+const path = require("path");
 
 var app = express();
 
@@ -14,6 +14,7 @@ app.use(express.static("public"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "src/views"));
 
 var routes = require("./src/controllers/pokemon_controller");
 
