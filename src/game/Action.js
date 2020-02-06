@@ -1,3 +1,8 @@
+const { GamePhase } = require("./State");
+const { socketier } = require("packetier");
+const WsMsgType = require("./WsMsgTypes");
+const PokeApi = require("../pokeapi");
+
 class Action {
   /**
    * @param {Action~handler} handler - Action handler takes battlefield
@@ -12,10 +17,45 @@ class Action {
 }
 
 const Actions = {
-  ATTACK: new Action(async (bf, data) => {
-    bf.broadcast(data.attack);
-    // TODO handle attacks and validation
-  }),
+  ATTACK: new Action(
+    /**
+     * @param {{attack: string, player: *}} data
+     */
+    async (bf, data) => {
+      // Ensure game is playing
+      if (bf.state.phase !== GamePhase.PLAYING) {
+        return bf.send(
+          data.client,
+          socketier(WsMsgType.ERR, {
+            msg: "Game has not started"
+          })
+        );
+      }
+      // Ensure it is the client's turn
+
+      // TODO Validate attack
+      let atkAPI;
+      try {
+        atkAPI = await PokeApi.getMoveByName(data.attack);
+      } catch (error) {
+        return bf.send(
+          data.client,
+          socketier(WsMsgType.ERR, {
+            msg: "Attack no existy",
+            attack: data.attack
+          })
+        );
+      }
+
+      // TODO Apply attack
+      bf.inActivePlayer.outMon.hp -= atkAPI.power / 2;
+      // TODO Update mon state
+
+      // Update turn
+      // !This must be last
+      bf.state.turn = bf.state.turn === 0 ? 1 : 0;
+    }
+  ),
   SWITCH: new Action(async bf => {
     // TODO handle mon switching
   })

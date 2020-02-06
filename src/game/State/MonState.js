@@ -1,6 +1,5 @@
-class MonState extends Schema {
+class MonState {
   constructor(name, hp) {
-    super();
     this.name = name;
     this.hp = hp;
   }

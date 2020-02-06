@@ -20,29 +20,18 @@ components:
           type: string
         username:
           type: string
-        teams:
-          type: array
-          items:
-            $ref: "#/components/schemas/Team"
-    Team:
-      type: object
-      properties:
-        uid:
-          type: string
-        name:
-          type: string
-        mons:
-          type: array
-          items:
-            $ref: "#/components/schemas/Mon"
         wins:
           type: integer
         losses:
           type: integer
+        team:
+          type: array
+          items:
+            $ref: "#/components/schemas/Mon"
     Mon:
       type: object
       properties:
-        tid:
+        uid:
           type: string
         name:
           type: string

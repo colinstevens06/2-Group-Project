@@ -50,6 +50,27 @@ class Battlefield extends Room {
   }
 
   /**
+   *
+   * @param {*} client - The client to validate turn of
+   *
+   * @returns {boolean} `true` if it is the client's turn
+   */
+  myTurn(client) {
+    return (
+      client.id ===
+      (this.state.turn === 0 ? this.state.host.cid : this.state.challenger.cid)
+    );
+  }
+
+  get activePlayer() {
+    return this.state.turn === 0 ? this.state.host : this.state.challenger;
+  }
+
+  get inActivePlayer() {
+    return this.state.turn === 1 ? this.state.host : this.state.challenger;
+  }
+
+  /**
    * Called when room is initialized.
    *
    * Expects `options` to match `options.create`
@@ -129,15 +150,15 @@ class Battlefield extends Room {
         break;
       // Handle ACTIONS: Moves & Swaps
       case WsMsgType.ACTION:
-        if (this.state.phase !== GamePhase.PLAYING) {
-          this.send(
+        if (!this.myTurn(client)) {
+          return this.send(
             client,
-            socketier(WsMsgType.ERR, { msg: "Game has not started" })
+            socketier(WsMsgType.ERR, { msg: "Not your turn", type: "turn" })
           );
         } else {
           const act = action.from(value.payload.action);
           if (act) {
-            act.handle(this, value.payload);
+            act.handle(this, { client, player, ...value.payload });
           } else {
             this.send(
               client,

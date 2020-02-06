@@ -35,7 +35,6 @@
     "colyseus": "^0.12.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
     "jsdoc": "^3.6.3",
     "packetier": "^2.0.0",
     "subtroller": "^0.1.5",

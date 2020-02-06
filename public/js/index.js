@@ -10,7 +10,9 @@ const test = async () => {
   bf.ready();
   bf2.ready();
 
-  setTimeout(() => bf.attack("MOVE_NAME"), 7000);
+  setTimeout(() => {
+    bf.attack("hyper-beam");
+  }, 6000);
 };
 
 test();
