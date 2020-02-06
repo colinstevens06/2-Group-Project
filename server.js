@@ -1,5 +1,4 @@
 const express = require("express");
-
 var exphbs = require("express-handlebars");
 
 var app = express();
@@ -19,6 +18,6 @@ var routes = require("./src/controllers/pokemon_controller");
 
 app.use(routes);
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });
