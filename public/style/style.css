@@ -1,3 +1,94 @@
+.battlefield-header__h1 {
+  font-size: 2.5rem;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.battlefield-header__action {
+  font-size: 1.5rem;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pokemon-image {
+  width: 70%;
+}
+
+.health-box {
+  background-color: #007f00;
+  height: 15px;
+  width: 200px;
+  border: solid 1px #aaa;
+  margin-top: 5px;
+  margin-top: 15px;
+}
+
+.button-attack {
+  background-color: #7e2a1f;
+  color: #eeff00;
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 100%;
+}
+
+.button-attack:hover {
+  background-color: #eeff00;
+  color: #7e2a1f;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.gameplay-text-box {
+  margin-bottom: 25px;
+}
+
+.attack-options {
+  text-align: center;
+}
+
+.attack-options .column {
+  padding: .25rem;
+}
+
+.team-selection-header__h1 {
+  font-size: 2.5rem;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.selection-container {
+  padding: 24px 46px;
+}
+
+.team-select-text {
+  margin-bottom: 25px;
+}
+
+.button-drop {
+  margin-bottom: 15px;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+html, body {
+  background-color: #7e2a1f;
+}
+
+.container {
+  margin-top: 3.5rem;
+  max-width: 960px;
+  background-color: white;
+}
+
 .battlefield-header {
   font-size: 2.5rem;
   width: 300px;
@@ -7,22 +98,21 @@
 }
 
 .pokemon-image {
-width: 150%;
+  width: 150%;
 }
 
 .health-box {
-background-color: #007f00;
-height: 15px;
-width: 200px;
-border: solid 1px #aaa;
-margin-top: 5px;
-margin-top: 15px;
+  background-color: #007f00;
+  height: 15px;
+  width: 200px;
+  border: solid 1px #aaa;
+  margin-top: 5px;
+  margin-top: 15px;
 }
-
 
 html, body {
   background-color: #7e2a1f;
-  }
+}
 
 .container {
   margin-top: 3.5rem;
@@ -30,22 +120,23 @@ html, body {
   background-color: white;
   border-radius: 25px;
   padding-bottom: 1.0rem;
-  }
+}
 
 .profile-header {
   font-size: 4rem;
-  background: linear-gradient(to left, rgb(112,101,214), rgb(230,106,213));
+  background: -webkit-gradient(linear, right top, left top, from(#7065d6), to(#e66ad5));
+  background: linear-gradient(to left, #7065d6, #e66ad5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
-  }
+}
 
 #homePage {
   font-size: 5rem;
 }
 
 .profile-border {
-  border: 1px solid rgb(57, 57, 209);
+  border: 1px solid #3939d1;
 }
 
 .profile-text {
@@ -75,7 +166,6 @@ html, body {
   padding: 20px 30px;
 }
 
-
 .team-select-text {
   margin-bottom: 20px;
 }
@@ -90,11 +180,15 @@ html, body {
 }
 
 .buttons {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .teamButton {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 img {
@@ -111,7 +205,7 @@ img {
 }
 
 table {
-  margin: auto
+  margin: auto;
 }
 
 td:nth-child(1) {
@@ -119,9 +213,11 @@ td:nth-child(1) {
   text-align: center;
   vertical-align: super;
 }
+
 td:nth-child(n+1) {
   padding: 20px;
   text-align: center;
   vertical-align: super;
   border-left: 1px solid black;
 }
+/*# sourceMappingURL=style.css.map */
