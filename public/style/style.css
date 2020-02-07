@@ -1,4 +1,4 @@
-.battlefield-header__h1 {
+.battlefield-header {
   font-size: 2.5rem;
   width: 300px;
   margin-left: auto;
@@ -19,6 +19,7 @@ margin-top: 5px;
 margin-top: 15px;
 }
 
+
 html, body {
   background-color: #7e2a1f;
   }
@@ -28,14 +29,13 @@ html, body {
   max-width: 960px;
   background-color: white;
   border-radius: 25px;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.0rem;
   }
 
 .profile-header {
   font-size: 4rem;
   background: linear-gradient(to left, rgb(112,101,214), rgb(230,106,213));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
   }
@@ -72,11 +72,12 @@ html, body {
 }
 
 .selection-container {
-  padding: 24px 46px;
+  padding: 20px 30px;
 }
 
+
 .team-select-text {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .button-drop {
@@ -92,6 +93,35 @@ html, body {
   justify-content: center;
 }
 
+.teamButton {
+  align-items: center;
+}
+
 img {
   border-radius: 25px;
+}
+
+#pokeImage {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.pokeSelect {
+  margin-left: 5rem;
+}
+
+table {
+  margin: auto
+}
+
+td:nth-child(1) {
+  padding: 20px;
+  text-align: center;
+  vertical-align: super;
+}
+td:nth-child(n+1) {
+  padding: 20px;
+  text-align: center;
+  vertical-align: super;
+  border-left: 1px solid black;
 }

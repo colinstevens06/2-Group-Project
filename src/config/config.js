@@ -1,30 +1,12 @@
-//get our mysql variable ready
-const mysql = require("mysql");
+const { Sequelize } = require("sequelize");
 
-//this first part is to check for HEROKU
-if (process.env.JAWSDB_URL) {
-  //use the JAWSDB connection setup
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  //this is for local testing
-  connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "pokegame"
-  });
-}
-
-//create our connection, and, have some fun with the status
-connection.connect(function(err, res) {
-  if(err) {
-    console.log("Houston, we have a problem", err);
-    throw err;
-  } else {
-    console.log("Houston, we have lift ID " + connection.threadId);
-    return res;
-  }
+module.exports = new Sequelize("pokegame", "root", "root", {
+  host: "localhost",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 1000
+  },
 });
-
-//export our connection
-module.exports = connection;
