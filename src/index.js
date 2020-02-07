@@ -22,4 +22,4 @@ const main = async () => {
   gameServer.listen(port);
 };
 
-main();
+main(); */

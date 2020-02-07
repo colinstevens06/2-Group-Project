@@ -11,7 +11,8 @@ const findGame = async () => {
   try {
     room = await client.joinOrCreate("battle", {
       username: "user-" + Math.random(),
-      lobbyName: "BF-" + Math.random()
+      lobbyName: "BF-" + Math.random(),
+      authToken: null // TODO Auth tokens
     });
   } catch (error) {
     console.log("FAILED ", error);

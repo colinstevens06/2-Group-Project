@@ -62,15 +62,4 @@ class Battlefield {
       this.room.send(socketier("action", { action: "attack", attack: move }));
     });
   }
-
-  /**
-   * Swap pokemon
-   *
-   * @param {number} position - Pokemon position to switch to (0-5)
-   */
-  async switch(position) {
-    this.enroomed(() => {
-      this.room.send(socketier("action", { action: "switch", mon: position }));
-    });
-  }
 }

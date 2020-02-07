@@ -21,7 +21,7 @@ const Actions = {
     /**
      * @param {{attack: string, player: *}} data
      */
-    async (bf, data) => {
+    async (bf, { attack, player, client }) => {
       // Ensure game is playing
       if (bf.state.phase !== GamePhase.PLAYING) {
         return bf.send(
@@ -31,29 +31,41 @@ const Actions = {
           })
         );
       }
-      // Ensure it is the client's turn
 
-      // TODO Validate attack
-      let atkAPI;
-      try {
-        atkAPI = await PokeApi.getMoveByName(data.attack);
-      } catch (error) {
+      // Ensure it is the client's turn
+      if (!bf.myTurn(client)) {
         return bf.send(
-          data.client,
+          client,
           socketier(WsMsgType.ERR, {
-            msg: "Attack no existy",
-            attack: data.attack
+            msg: "Not your turn",
+            type: "turn"
           })
         );
       }
 
-      // TODO Apply attack
-      bf.inActivePlayer.outMon.hp -= atkAPI.power / 2;
+      // Validate attack
+      let atkAPI;
+      try {
+        atkAPI = await PokeApi.getMoveByName(attack);
+      } catch (error) {
+        return bf.send(
+          client,
+          socketier(WsMsgType.ERR, {
+            msg: "Attack does not exist",
+            attack: attack
+          })
+        );
+      }
+
+      // TODO Apply attack to opposing mon
       // TODO Update mon state
+      bf.inActivePlayer.activeMon.hp -= atkAPI.power / 2;
 
       // Update turn
       // !This must be last
       bf.state.turn = bf.state.turn === 0 ? 1 : 0;
+
+      bf.updateState();
     }
   ),
   SWITCH: new Action(async bf => {

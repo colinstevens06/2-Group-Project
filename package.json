@@ -27,14 +27,12 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "sequelize": "^5.21.3",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^8.5.1",
     "@hapi/joi": "^17.1.0",
     "express-handlebars": "^3.1.0",
     "colyseus": "^0.12.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "express-handlebars": "^3.1.0",
     "jsdoc": "^3.6.3",
     "packetier": "^2.0.0",
     "subtroller": "^0.1.5",
