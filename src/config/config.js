@@ -1,12 +1,13 @@
 const { Sequelize } = require("sequelize");
 
-module.exports = new Sequelize("pokegame", "root", "root", {
-  host: "localhost",
+const sqlz = new Sequelize(process.env.JAWSDB_URL, {
   dialect: "mysql",
   pool: {
     max: 5,
     min: 0,
     acquire: 30000,
-    idle: 1000
-  },
+    idle: 10000
+  }
 });
+
+module.exports = sqlz;

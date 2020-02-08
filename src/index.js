@@ -16,10 +16,10 @@ const main = async () => {
   const gameServer = await initGameServer(expressServer);
   console.log("\tDONE");
 
-  console.log("Opening Server Port");
   // Listen
   const port = process.env.PORT;
+  console.log(`Opening Server Port ${port}`);
   gameServer.listen(port);
 };
 
-main(); */
+main();
