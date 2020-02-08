@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest ./spec/",
     "lint": "eslint ./src/ ./spec/",
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "clean": "rm -rf ./node_modules package-lock.json",
     "reinstall": "npm run clean && npm install"
   },
@@ -33,6 +33,7 @@
     "colyseus": "^0.12.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",

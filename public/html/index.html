@@ -14,9 +14,6 @@
 
   <!-- {{!-- Our Stylesheet --}} -->
   <link rel="stylesheet" href="../style/style.css">
-
-
-
 </head>
 
 <body>
@@ -39,7 +36,7 @@
       <div class="small-form">
         <div class="field">
           <p class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email">
+            <input class="input is-danger" id="userEmail" type="email" placeholder="Email">
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
@@ -50,14 +47,15 @@
         </div>
         <div class="field">
           <p class="control has-icons-left">
-            <input class="input is-danger" type="password" placeholder="Password">
+            <input class="input is-danger" id="userPassword" type="password" placeholder="Password">
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
           </p>
         </div>
         <div class="buttons">
-          <button class="button is-danger" id="loginApp">Log In</button>
+          <a href="profile" id="loginApp" class="button is-danger">Log In</a>
+          <!-- <button class="button is-danger" id="loginApp">Log In</button> -->
           <a href="create-profile.html" class="button is-danger" id="signupNew">Sign Up Here</a>
         </div>
       </div>
@@ -67,9 +65,10 @@
 
 
 <script src="https://kit.fontawesome.com/ab3fd93a87.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- AJAX -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script> <!-- JQuery  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- AJAX -->
+
 
 <!-- <script src="./select-team.js"></script> -->
 <script src="../js/home-page.js"></script>
