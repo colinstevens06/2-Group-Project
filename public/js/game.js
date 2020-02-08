@@ -124,6 +124,11 @@ class Battlefield {
 
           victorySound.play();
         }
+      } else {
+        $("#my-health").text(`${state.host.mons[state.host.outMon].hp}/100`);
+        $("#notmy-health").text(
+          `${state.challenger.mons[state.challenger.outMon].hp}/100`
+        );
       }
     });
 

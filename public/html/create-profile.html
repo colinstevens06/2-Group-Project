@@ -1,220 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Battlefield</title>
 
-  <title>Pokemon Battlefield</title>
+    <!-- {{!-- Importing Bulma Stylesheet --}} -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
 
-  <!-- {{!-- Importing Bulma Stylesheet --}} -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- {{!-- Our Stylesheet --}} -->
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
 
-  <!-- {{!-- Our Stylesheet --}} -->
-  <link rel="stylesheet" href="../style/style.css">
-
-
-
-</head>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <div>Nottomon</div>
-    </a>
-
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHamburger">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarHamburger" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="index.html">
-        Home
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <div>Nottomon</div>
       </a>
 
-      <a class="navbar-item" href="profile.html">
-        My Profile
+      <a
+        role="button"
+        class="navbar-burger burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarHamburger"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-
-      <a class="navbar-item" href="leaderboard.html">
-        Leaderboard
-      </a>
-
-
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary" href="index.html">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-primary" href="profile.html">
-            Update
-          </a>
-        </div>
+    <div id="navbarHamburger" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/html/index.html">
+          Home
+        </a>
+
+        <a class="navbar-item" href="/html/profile.html">
+          My Profile
+        </a>
+
+        <a class="navbar-item" href="/html/leaderboard.html">
+          Leaderboard
+        </a>
       </div>
-    </div>
-  </div>
-</nav>
 
-<body>
-
-  <section>
-    <div class="container is-desktop">
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="selection-container">
-            <h1 class="profile-header has-text-weight-bold">Pokemon Battlefield Profile</h1>
-            <figure class="image is-128x128 is-centered">
-              <img class="is-centered" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
-            </figure>
-
-            <form action="">
-              <!-- row for first name, last name and team name -->
-              <div class="columns">
-                <div class="column">
-                  <input class="input" type="text" placeholder="First Name" id="first-name">
-                </div>
-                <div class="column">
-                  <input class="input" type="text" placeholder="Last Name" id="last-name">
-                </div>
-                <div class="column">
-                  <input class="input" type="text" placeholder="Team Name" id="team-name">
-                </div>
-              </div>
-              <!-- row for email and password -->
-              <div class="columns">
-                <div class="column">
-                  <input class="input" type="email" placeholder="Email" id="user-email">
-                </div>
-                <div class="column">
-                  <input class="input" type="password" placeholder="Password" id="user-password">
-                </div>
-              </div>
-
-              <!-- text area to say pick your PokeMon -->
-              <div class="columns">
-                <div class="column">
-                  <h2 class="team-selection-header__h1">Choose Your Team</h2>
-
-                  <p class="team-select-text">From here, you'll select a team of six PokeMon to go to battle with.
-                    Attacks
-                    will be chosen at
-                    random.
-                    Choose wisely.</p>
-                </div>
-              </div>
-
-
-              <!-- TOP ROW TO CHOOSE POKEMON -->
-              <div class="columns">
-
-                <div class="column">
-                  <!-- POKEMON ONE SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 1</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-1">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <!-- POKEMON TWO SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 2</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-2">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <!-- POKEMON THREE SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 3</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-3">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- SECOND ROW TO CHOOSE POKEMON -->
-              <div class="columns">
-                <div class="column">
-
-                  <!-- POKEMON FOUR SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 4</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-4">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <!-- POKEMON FIVE SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 5</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-5">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <!-- POKEMON SIX SELECTOR -->
-                  <div class="field">
-                    <label class="label">Pokemon 6</label>
-                    <div class="control">
-                      <div class="select">
-                        <select id="poke-select-6">
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- SUBMIT BUTTON -->
-              <div class="field">
-                <div class="control">
-                  <button class="button is-link" id="choose-team-submit">Submit</button>
-                </div>
-
-              </div>
-            </form>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="/html/index.html">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-primary" href="/html/profile.html">
+              Update
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </nav>
 
-</body>
+  <body>
+    <section>
+      <div class="container is-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="selection-container">
+              <h1 class="profile-header has-text-weight-bold">
+                Pokemon Battlefield Profile
+              </h1>
+              <figure class="image is-128x128 is-centered">
+                <img
+                  class="is-centered"
+                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+                />
+              </figure>
 
-<script src="https://kit.fontawesome.com/ab3fd93a87.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script> <!-- JQuery  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- AJAX -->
+              <form action="">
+                <!-- row for first name, last name and team name -->
+                <div class="columns">
+                  <div class="column">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="First Name"
+                      id="first-name"
+                    />
+                  </div>
+                  <div class="column">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Last Name"
+                      id="last-name"
+                    />
+                  </div>
+                  <div class="column">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Team Name"
+                      id="team-name"
+                    />
+                  </div>
+                </div>
+                <!-- row for email and password -->
+                <div class="columns">
+                  <div class="column">
+                    <input
+                      class="input"
+                      type="email"
+                      placeholder="Email"
+                      id="user-email"
+                    />
+                  </div>
+                  <div class="column">
+                    <input
+                      class="input"
+                      type="password"
+                      placeholder="Password"
+                      id="user-password"
+                    />
+                  </div>
+                </div>
 
-<!-- <script src="./select-team.js"></script> -->
-<script src="../js/create-profile.js"></script>
+                <!-- text area to say pick your PokeMon -->
+                <div class="columns">
+                  <div class="column">
+                    <h2 class="team-selection-header__h1">Choose Your Team</h2>
 
+                    <p class="team-select-text">
+                      From here, you'll select a team of six PokeMon to go to
+                      battle with. Attacks will be chosen at random. Choose
+                      wisely.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- TOP ROW TO CHOOSE POKEMON -->
+                <div class="columns">
+                  <div class="column">
+                    <!-- POKEMON ONE SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 1</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-1"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <!-- POKEMON TWO SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 2</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-2"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <!-- POKEMON THREE SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 3</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-3"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- SECOND ROW TO CHOOSE POKEMON -->
+                <div class="columns">
+                  <div class="column">
+                    <!-- POKEMON FOUR SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 4</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-4"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <!-- POKEMON FIVE SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 5</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-5"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <!-- POKEMON SIX SELECTOR -->
+                    <div class="field">
+                      <label class="label">Pokemon 6</label>
+                      <div class="control">
+                        <div class="select">
+                          <select id="poke-select-6"> </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- SUBMIT BUTTON -->
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-link" id="choose-team-submit">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script
+    src="https://kit.fontawesome.com/ab3fd93a87.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Font Awesome -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"
+  ></script>
+  <!-- JQuery  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- AJAX -->
+
+  <!-- <script src="./select-team.js"></script> -->
+  <script src="../js/create-profile.js"></script>
 </html>
