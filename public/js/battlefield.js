@@ -5,10 +5,15 @@ $(document).ready(function () {
     src: ["../soundfiles/Music/battle.mp3"],
     loop: true,
     autoplay: true,
+    volume: .3
   });
 
-  // play the music
-  battletheme.fadeIn(10);
+  const attack = new Howl({
+    src: ["../soundfiles/Music/attack.wav"]
+  });
+
+
+
 
   $(".button-attack").on("click", function (event) {
     event.preventDefault();
@@ -20,12 +25,18 @@ $(document).ready(function () {
 
     // console.log(thisButtonData);
 
+    attack.play();
+
     // the first animation is going to be that the user's mon will do some kind of slow rise then quick thud
     userSprite.animate({
       width: "50%"
     }, 450).animate({
       width: "100%"
     }, 150);
+
+
+
+
 
     opponentSprite.delay(800).animate({
       width: "90%"
