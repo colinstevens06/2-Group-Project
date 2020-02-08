@@ -1,26 +1,28 @@
-# 2-Group-Project
-Group Project - TBD
-# Unit 15: Project 2
+# Project 2: Unit 15
+Pokemon BattleField
 
 ## Overview
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm and your own server-side API. You will also continue to add to your professional repertoire with testing, continuous integration and linting tools.
+Welcome to Pokemon Battlefield. Our team created a pokemon game that is player vs player. This Project incorporates the full-stack design in building a full-stack web application. Our team designed and built an application using the MVC paradigm and a server-side API. We also used a continuous integration and linting tools to help us as a team to build our application.
 
-## Key Topics
-* Linting
-* Continuous integration
-* Testing
+# How to Play
+After putting in your email and password, click the login button to access your profile. From your profile you can select the pokemon you want to take into battle. Once you selected your team, click the submit button and your battle will begin. Enjoy!
 
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. Why is TDD?
-2. What is linting?
-3. What is continuous integration?
+## Heroku Link:
 
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Configure linting and continuous integration with Travis CI.
-* Explain and implement unit tests
-* Design, build and deploy a full-stack web application to Heroku
+* Link: 
+
+## GitHub Link:
+* https://github.com
+
+
+## Screen Shot
+
+![alt text][screenshot]
+
+[screenshot]: https://github.com/colinstevens06/2-Group-Project/blob/master/screenshot.png "Pokemon Battlefield Project"
+
+
+## References
 
 ## Helpful Links
 [Mocha JS Docs](https://mochajs.org/)

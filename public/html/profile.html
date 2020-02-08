@@ -34,15 +34,15 @@
 
   <div id="navbarHamburger" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="index.html">
+      <a class="navbar-item" href="/">
         Home
       </a>
 
-      <a class="navbar-item" href="profile.html">
+      <a class="navbar-item" href="profile">
         My Profile
       </a>
 
-      <a class="navbar-item" href="leaderboard.html">
+      <a class="navbar-item" href="leaderboard">
         Leaderboard
       </a>
 
@@ -82,19 +82,19 @@
           <div class="column">
             <div class="field">
               <label class="label is-size-4">Team Name</label>
-              <label class="label profile-border profile-text is-size-5">{{user_charName}}</label>
+              <label class="label profile-border profile-text is-size-5"><%= user_charName%></label>
               <label class="label is-size-4">First Name</label>
-              <label class="label profile-border profile-text is-size-5">{{user_Fname}}</label>
+              <label class="label profile-border profile-text is-size-5"><%= user_Fname%></label>
               <label class="label is-size-4">Wins</label>
-              <label class="label profile-border profile-text is-size-5">{{user_game_wins}}</label>
+              <label class="label profile-border profile-text is-size-5">5</label>
             </div>
           </div>
           <div class="column">
             <div class="field">
               <label class="label is-size-4">Email Address</label>
-              <label class="label profile-border profile-text is-size-5">{{user_email}}</label>
+              <label class="label profile-border profile-text is-size-5"><%= user_email%></label>
               <label class="label is-size-4">Last Name</label>
-              <label class="label profile-border profile-text is-size-5">{{user_Lname}}</label>
+              <label class="label profile-border profile-text is-size-5"><%= user_Lname%></label>
             </div>
           </div>
 
@@ -197,7 +197,7 @@
               <!-- SUBMIT BUTTON -->
               <div class="field">
                 <div class="buttons">
-                  <button class="button is-link" id="choose-team-submit">Submit</button>
+                  <a href="/battlefield" class="button is-link" id="choose-team-submit">Submit</a>
                 </div>
 
               </div>
