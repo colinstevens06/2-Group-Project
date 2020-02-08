@@ -19,6 +19,41 @@ class Battlefield {
 
       if (msg.type === "attack") {
         // Play animation
+        let userSprite = $("#user-sprite");
+        let opponentSprite = $("#opponent-sprite");
+
+        // console.log(thisButtonData);
+
+        // the first animation is going to be that the user's mon will do some kind of slow rise then quick thud
+        userSprite.animate({
+          width: "50%"
+        }, 450).animate({
+          width: "100%"
+        }, 150);
+
+        opponentSprite.delay(800).animate({
+          width: "90%"
+        }, 175).animate({
+          width: "100%"
+        }, 150).animate({
+          width: "80%"
+        }, 125).animate({
+          width: "100%"
+        }, 100).animate({
+          width: "70%"
+        }, 75).animate({
+          width: "100%"
+        }, 50).animate({
+          width: "80%"
+        }, 75).animate({
+          width: "100%"
+        }, 100).animate({
+          width: "90%"
+        }, 125).animate({
+          width: "100%"
+        }, 150);
+
+
       }
     });
 
@@ -29,8 +64,20 @@ class Battlefield {
       if (state.phase === "end") {
         if (state.loser.cid === this.room.sessionId) {
           // If we lost
+          const defeatSound = new Howl({
+            src: ["../soundfiles/Music/defeat.mp3"]
+          });
+
+          defeatSound.play();
+
         } else {
           // if we won
+          const victorySound = new Howl({
+            src: ["../soundfiles/Music/victory.mp3"]
+          });
+
+          victorySound.play();
+
         }
       }
     });
