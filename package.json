@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest ./spec/",
     "lint": "eslint ./src/ ./spec/",
-    "start": "node ./src/server.js",
-    "dev": "nodemon ./src/server.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
     "clean": "rm -rf ./node_modules package-lock.json",
     "reinstall": "npm run clean && npm install"
   },
