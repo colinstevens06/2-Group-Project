@@ -25,7 +25,7 @@ const Actions = {
       // Ensure game is playing
       if (bf.state.phase !== GamePhase.PLAYING) {
         return bf.send(
-          data.client,
+          client,
           socketier(WsMsgType.ERR, {
             msg: "Game has not started"
           })
