@@ -5,7 +5,7 @@ const { decode } = require("jsonwebtoken");
  * This is middleware for restricting routes a user is not allowed to visit if not logged in
  */
 const requireToken = async (req, res, next) => {
-  const token = req.headers.token;
+  const token = req.headers.token || req.body.token;
 
   // If the user isn't logged in, redirect them to the login page
   if (!token) {

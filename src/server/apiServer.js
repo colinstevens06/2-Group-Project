@@ -21,7 +21,7 @@ const initExpressServer = async () => {
   // API
   const apiRoot = "/api/";
 
-  svr.use(apiRoot + "use", routes.user);
+  svr.use(apiRoot + "user", routes.user);
   svr.use(apiRoot + "auth", routes.auth);
   svr.use(apiRoot + "match", routes.matching);
 

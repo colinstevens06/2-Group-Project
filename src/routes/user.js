@@ -5,6 +5,10 @@ const {
 } = require("../middleware");
 const { user: ctrlr } = require("../controllers");
 
-router.get("/:uid", requireToken, ctrlr.get.one);
+router.get("/", requireToken, ctrlr.get.user);
+
+router.get("/team", requireToken, ctrlr.get.team);
+
+router.put("/team", requireToken, ctrlr.put.team);
 
 module.exports = router;
