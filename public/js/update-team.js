@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     console.log(newTeam);
 
-    $.ajax("/api/team", {
+    $.ajax("/api/user/team", {
       type: "PUT",
       data: newTeam
     }).then(function () {
