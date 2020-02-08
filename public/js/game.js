@@ -168,7 +168,7 @@ class Battlefield {
   }
 }
 
-let client = new Colyseus.Client("ws://nottomon.heroku.com");
+let client = new Colyseus.Client("ws://nottomon.herokuapp.com");
 
 /**
  * Finds or creates a new lobby.

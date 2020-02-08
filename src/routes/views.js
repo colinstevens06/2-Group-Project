@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
   if (req.user) {
     res.redirect("/signup");
   }
-  res.sendFile(join(__dirname, "..", "..", "public", "html", "signup.html"));
+  res.sendFile(join(__dirname, "..", "..", "public", "html", "index.html"));
 });
 
 router.get("/login", function(req, res) {
