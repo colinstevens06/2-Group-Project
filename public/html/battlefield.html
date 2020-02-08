@@ -42,7 +42,7 @@
         My Profile
       </a>
 
-      <a class="navbar-item" href="leaderboard.html"> 
+      <a class="navbar-item" href="leaderboard.html">
         Leaderboard
       </a>
 
@@ -78,7 +78,7 @@
           <h1 class="battlefield-header__h1">Battle Time!</h1>
           <div class="battlefield-container">
             <!-- OPPONENT'S INFO -->
-            <div class="columns">
+            <div class="columns opponent-box">
               <!-- OPPONENT'S POKEMON DATA -->
               <div class="column">
                 <h2>Opponent Pokemon Name</h2>
@@ -90,15 +90,15 @@
               <!-- OPPONENT'S POKEMON FRONT IMAGE -->
               <div class="column">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-                  alt="This Pokemon" class="pokemon-image">
+                  alt="This Pokemon" class="pokemon-image" id="opponent-sprite">
               </div>
             </div>
             <!-- THIS USER'S INFO -->
-            <div class="columns">
+            <div class="columns user-box">
               <div class="column">
                 <!-- USER'S POKEMON BACK IMAGE -->
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png"
-                  alt="This Pokemon's backside" class="pokemon-image">
+                  alt="This Pokemon's backside" class="pokemon-image" id="user-sprite">
               </div>
               <div class="column">
                 <!-- USER'S POKEMON DATA -->
@@ -153,58 +153,6 @@
                 </div>
               </div>
 
-              <!-- CHOOSE YOUR POKEMON SECTION -->
-              <div class="columns" style=" display: none;">
-                <div class="column">
-                  <div class="columns">
-                    <div class="column">
-
-
-                      <h2 class="battlefield-header__action" id="battlefield-header__action">Select Your
-                        Pokemon
-                      </h2>
-                    </div>
-                  </div>
-                  <div class="columns">
-                    <div class="column">
-
-                      <p class="battlefield-text__options" id="battlefield-text__battle-options"></p>
-
-                      <div class="columns attack-options">
-
-
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-1">Pokemon 1</div>
-                        </div>
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-2">Pokemon 2</div>
-                        </div>
-                      </div>
-                      <div class="columns attack-options">
-
-
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-3">Pokemon 3</div>
-                        </div>
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-4">Pokemon 4</div>
-                        </div>
-                      </div>
-                      <div class="columns attack-options">
-
-
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-5">Pokemon 5</div>
-                        </div>
-                        <div class="column">
-                          <div class="button button-attack" data-pokemon="pokemon-6">Pokemon 6</div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -217,14 +165,11 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.js"></script>
-<script src="./battlefield.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.js"></script>
+<script src="../js/battlefield.js"></script>
 
 <!-- Imports for gameplay -->
-<script
-  type="text/javascript"
-  src="https://raw.githack.com/colyseus/colyseus.js/master/dist/colyseus.js"
-></script>
+<script type="text/javascript" src="https://raw.githack.com/colyseus/colyseus.js/master/dist/colyseus.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/packetier@2.0.0/src/ws/index.js"></script>
 <script src="./js/ws/match.js"></script>
 <script src="./js/ws/game.js"></script>
