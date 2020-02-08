@@ -25,35 +25,82 @@ class Battlefield {
         // console.log(thisButtonData);
 
         // the first animation is going to be that the user's mon will do some kind of slow rise then quick thud
-        userSprite.animate({
-          width: "50%"
-        }, 450).animate({
-          width: "100%"
-        }, 150);
+        userSprite
+          .animate(
+            {
+              width: "50%"
+            },
+            450
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            150
+          );
 
-        opponentSprite.delay(800).animate({
-          width: "90%"
-        }, 175).animate({
-          width: "100%"
-        }, 150).animate({
-          width: "80%"
-        }, 125).animate({
-          width: "100%"
-        }, 100).animate({
-          width: "70%"
-        }, 75).animate({
-          width: "100%"
-        }, 50).animate({
-          width: "80%"
-        }, 75).animate({
-          width: "100%"
-        }, 100).animate({
-          width: "90%"
-        }, 125).animate({
-          width: "100%"
-        }, 150);
-
-
+        opponentSprite
+          .delay(800)
+          .animate(
+            {
+              width: "90%"
+            },
+            175
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            150
+          )
+          .animate(
+            {
+              width: "80%"
+            },
+            125
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            100
+          )
+          .animate(
+            {
+              width: "70%"
+            },
+            75
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            50
+          )
+          .animate(
+            {
+              width: "80%"
+            },
+            75
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            100
+          )
+          .animate(
+            {
+              width: "90%"
+            },
+            125
+          )
+          .animate(
+            {
+              width: "100%"
+            },
+            150
+          );
       }
     });
 
@@ -69,7 +116,6 @@ class Battlefield {
           });
 
           defeatSound.play();
-
         } else {
           // if we won
           const victorySound = new Howl({
@@ -77,7 +123,6 @@ class Battlefield {
           });
 
           victorySound.play();
-
         }
       }
     });
@@ -123,7 +168,7 @@ class Battlefield {
   }
 }
 
-let client = new Colyseus.Client("ws://localhost:7000"); // TODO Update to heroku URI
+let client = new Colyseus.Client("ws://nottomon.heroku.com");
 
 /**
  * Finds or creates a new lobby.

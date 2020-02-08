@@ -1,8 +1,5 @@
-$(document).ready(function () {
-
-
-
-/*   $(document).on("click", "#loginApp" , function(event) {
+$(document).ready(function() {
+  /*   $(document).on("click", "#loginApp" , function(event) {
     event.preventDefault();
 
     const userLoginInfo = {
@@ -23,5 +20,4 @@ $(document).ready(function () {
       }
     });
   }); */
-
 }); // end of the document ready

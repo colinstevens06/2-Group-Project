@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // query URL for the AJAX call
   let queryURL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151";
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function (response) {
+  }).then(function(response) {
     // empty array to hold all the pokemon names
     let pokemonTeamOptions = [];
     let constructor = response.results;
@@ -27,7 +27,7 @@ $(document).ready(function () {
     }
 
     // Populating the buttons with content
-    pokemonTeamOptions.forEach(function (mon) {
+    pokemonTeamOptions.forEach(function(mon) {
       let pokeOptions1 = $("<option>").text(mon);
       let pokeOptions2 = $("<option>").text(mon);
       let pokeOptions3 = $("<option>").text(mon);
@@ -42,12 +42,10 @@ $(document).ready(function () {
       pokeSelect4.append(pokeOptions4);
       pokeSelect5.append(pokeOptions5);
       pokeSelect6.append(pokeOptions6);
-
     });
-
   });
 
-  $("#choose-team-submit").on("click", function (event) {
+  $("#choose-team-submit").on("click", function(event) {
     event.preventDefault();
 
     const newTeam = {
@@ -57,7 +55,6 @@ $(document).ready(function () {
       pokemon4: pokeSelect4.val().trim(),
       pokemon5: pokeSelect5.val().trim(),
       pokemon6: pokeSelect6.val().trim()
-
     };
 
     console.log(newTeam);
@@ -65,13 +62,9 @@ $(document).ready(function () {
     $.ajax("/api/user/team", {
       type: "PUT",
       data: newTeam
-    }).then(function () {
+    }).then(function() {
       console.log("create new team");
       location.reload();
     });
-
-
   });
-
 }); // end of the document.ready
-
