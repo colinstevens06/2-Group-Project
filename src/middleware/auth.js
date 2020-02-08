@@ -19,13 +19,10 @@ const pullToken = async (req, res, next) => {
  * This is middleware for restricting routes a user is not allowed to visit if not logged in
  */
 const requireToken = async (req, res, next) => {
-  const tokenFound = await pullToken(req, res, () => {});
+  await pullToken(req, res, () => {});
 
-  if (!tokenFound) {
-    res
-      .status(401)
-      .redirect("/")
-      .json(packetier(false, null, { err: "Missing token" }));
+  if (!req.token) {
+    res.status(401).json(packetier(false, null, { err: "Missing token" }));
     return;
   }
 

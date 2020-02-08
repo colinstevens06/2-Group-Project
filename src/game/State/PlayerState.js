@@ -3,7 +3,7 @@ class PlayerState {
     this.cid = cid;
     this.username = username;
     this.ready = false;
-    this.mons = [{ name: "name__", hp: 10 }]; // TODO handle mons in state
+    this.mons = [];
     this.outMon = 0;
   }
 
