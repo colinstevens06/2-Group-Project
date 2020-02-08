@@ -3,7 +3,6 @@ info:
   title: Nottomon API
   description: Nottomon API
   version: 0.1.0
-
 servers:
   - url: https://nottomon.herku.com
 
@@ -21,26 +20,19 @@ components:
           type: string
         username:
           type: string
-        teams:
-          type: array
-          items:
-            $ref: "#/components/schemas/Team"
-    Team:
-      type: object
-      properties:
-        name:
-          type: string
-        mons:
-          type: array
-          items:
-            $ref: "#/components/schemas/Mon"
         wins:
           type: integer
         losses:
           type: integer
+        team:
+          type: array
+          items:
+            $ref: "#/components/schemas/Mon"
     Mon:
       type: object
       properties:
+        uid:
+          type: string
         name:
           type: string
         level:
@@ -101,7 +93,7 @@ paths:
         201:
           description: New team has been created
 
-  /api/user/:id/teams/:id:
+  /api/user/:id/team:
     put:
       description: Update a team
       responses:

@@ -22,26 +22,24 @@
   },
   "homepage": "https://github.com/colinstevens06/2-Group-Project#readme",
   "devDependencies": {
-    "bcryptjs": "^2.4.3",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
-    "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "@hapi/joi": "^17.1.0",
+    "bcryptjs": "^2.4.3",
     "colyseus": "^0.12.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "jsdoc": "^3.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
-    "packetier": "^1.0.1",
-    "pokeapi": "0.0.1",
+    "packetier": "^2.0.0",
     "pokedex-promise-v2": "^3.2.0",
     "sequelize": "^5.21.3",
-    "subtroller": "^0.1.5",
-    "swagger-ui-express": "^4.1.3"
+    "subtroller": "^0.1.5"
   }
 }
