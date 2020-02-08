@@ -71,7 +71,13 @@ $(document).ready(function () {
     });
 
 
+
   });
 
+  //event listener for find battle button
+  $("#find-battle-btn").on("click", function () {
+    console.log("finding match");
+    findMatch();
+  });
 }); // end of the document.ready
 
