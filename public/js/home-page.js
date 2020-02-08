@@ -1,4 +1,15 @@
 $(document).ready(function () {
+
+  // creating howler for the music
+  const theme = new Howl({
+    src: ["../soundfiles/Music/themelounge.mp3"],
+    loop: true,
+    autoplay: true,
+  });
+
+  // play the music
+  theme.fadeIn(10);
+
   $("#loginApp").on("click", function (event) {
     event.preventDefault();
 
