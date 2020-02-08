@@ -57,6 +57,8 @@ const Actions = {
         );
       }
 
+      bf.broadcast(socketier("attack", { attack }));
+
       // TODO Apply attack to opposing mon
       // TODO Update mon state
       bf.inActivePlayer.activeMon.hp -= atkAPI.power / 2;
