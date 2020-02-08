@@ -54,10 +54,10 @@ class Battlefield extends Room {
   /**
    * TODO End game, Update user stats
    */
-  async end(winner) {
+  async end(loser) {
     console.log("Ending Game");
     // Set winner
-    this.state.winner = winner;
+    this.state.loser = winner;
     // End game
     this.state.phase = GamePhase.END;
     // TODO update user stats
@@ -115,7 +115,7 @@ class Battlefield extends Room {
    */
   changeMon(player) {
     if (++player.outMon === player.mons.length) {
-      this.end();
+      this.end(player);
     }
   }
 

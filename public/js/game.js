@@ -16,11 +16,23 @@ class Battlefield {
   initialize(room) {
     room.onMessage(msg => {
       console.log("Incoming", msg);
+
+      if (msg.type === "attack") {
+        // Play animation
+      }
     });
 
     room.onStateChange(async state => {
       console.log("State", state);
-      this.state = state;
+
+      // play game end sounds
+      if (state.phase === "end") {
+        if (state.loser.cid === this.room.sessionId) {
+          // If we lost
+        } else {
+          // if we won
+        }
+      }
     });
 
     room.onLeave(code => {
