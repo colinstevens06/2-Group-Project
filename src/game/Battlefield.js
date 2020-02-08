@@ -6,6 +6,8 @@ const WarMap = require("./WarMap");
 const action = require("./Action");
 const { socketier } = require("packetier");
 const { delay } = require("../util");
+const { validate } = require("../TokenFarm");
+const { Mon } = require("../models");
 
 /**
  * Battlefield Room.
@@ -131,8 +133,14 @@ class Battlefield extends Room {
   }
 
   // TODO Authorize client based on provided options before WebSocket handshake is complete
-  async onAuth(client, options, request) {
-    return true;
+  async onAuth(_, options, __) {
+    if (!options.token) {
+      return false;
+    }
+
+    const user = validate(options.token);
+
+    return { user, token: options.token };
   }
 
   /**
@@ -143,19 +151,35 @@ class Battlefield extends Room {
    * @param {*} auth
    */
   onJoin(client, options, auth) {
+    let player;
+
     if (!this.state.host) {
-      this.state.setHost(client.id, options.username); // TODO Change to JWT
+      this.state.setHost(client.id, auth.user.username);
       this.lobbyName = options.lobbyName || this.roomId;
+      player = this.state.host;
     } else {
-      this.state.setChallenger(client.id, options.username); // TODO Change to JWT
+      this.state.setChallenger(client.id, auth.user.username);
+      player = this.state.challenger;
     }
 
     console.log(`Player ${client.id} joined ${this.roomName} ${this.roomId}`);
 
-    // Set lobby to ready if 2 players are here
-    if (!this.isOpen) {
-      this.state.phase = GamePhase.READY;
-    }
+    console.log("Fetching team...");
+
+    // setup team
+
+    Mon.findAll({ where: { uid: auth.user.uid } })
+      .then(r => r.map(r => ({ ...r.get(), hp: 100 }))) // TODO actual HPs
+      .then(team => {
+        player.mons = team;
+
+        console.log("DONE");
+
+        // Set lobby to ready if 2 players are here
+        if (!this.isOpen) {
+          this.state.phase = GamePhase.READY;
+        }
+      });
   }
 
   // When a client sends a message

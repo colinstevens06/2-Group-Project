@@ -69,17 +69,14 @@ let client = new Colyseus.Client("ws://localhost:7000"); // TODO Update to herok
 /**
  * Finds or creates a new lobby.
  *
+ * @param {string} token - JWT auth token.
  * @returns {Battlefield} the Colyseus room that was joined or made
  */
-const findGame = async () => {
+const findGame = async (token, lobbyName) => {
   let room;
 
   try {
-    room = await client.joinOrCreate("battle", {
-      username: "user-" + Math.random(),
-      lobbyName: "BF-" + Math.random(),
-      authToken: null // TODO Auth tokens
-    });
+    room = await client.joinOrCreate("battle", { lobbyName, token });
   } catch (error) {
     console.log("FAILED ", error);
     return null;
