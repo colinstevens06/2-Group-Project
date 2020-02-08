@@ -6,14 +6,14 @@ const {
 } = require("../middleware");
 
 // set the static route for the handlebars pages
-router.use("/", express.static(join("..", "..", "public")));
+router.use("/", express.static(join(__dirname, "..", "..", "public")));
 
 router.get("/", function(req, res) {
   // if user is signing up send to signup page
   if (req.user) {
     res.redirect("/signup");
   }
-  res.sendFile(path.join(__dirname, "../signup.html"));
+  res.sendFile(join(__dirname, "..", "..", "public", "html", "signup.html"));
 });
 
 router.get("/login", function(req, res) {
@@ -21,7 +21,7 @@ router.get("/login", function(req, res) {
   if (req.user) {
     res.redirect("/profile");
   }
-  res.sendFile(path.join(__dirname, "../profile.html"));
+  res.sendFile(join(__dirname, "..", "..", "public", "html", "profile.html"));
 });
 
 /**
@@ -30,7 +30,7 @@ router.get("/login", function(req, res) {
  * they will be redirected to the signup page
  */
 router.get("/profile", requireToken, function(req, res) {
-  res.sendFile(path.join(__dirname, "../signup.html"));
+  res.sendFile(join(__dirname, "..", "..", "public", "html", "signup.html"));
 });
 
 module.exports = router;
