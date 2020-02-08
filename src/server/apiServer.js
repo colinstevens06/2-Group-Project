@@ -11,7 +11,7 @@ const initExpressServer = async () => {
   // Configuration
   svr.use(
     cors({
-      origin: "https://nottomon.herokuapp.com/",
+      origin: "*", //"https://nottomon.herokuapp.com/",
       methods: ["GET", "POST", "PUT", "DELETE"]
     })
   );
