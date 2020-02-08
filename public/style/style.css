@@ -228,4 +228,10 @@ td:nth-child(n+1) {
   vertical-align: super;
   border-left: 1px solid black;
 }
+
+.find-battle {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=style.css.map */
